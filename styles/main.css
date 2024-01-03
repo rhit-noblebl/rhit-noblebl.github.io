@@ -1,0 +1,121 @@
+:root{
+    --vertical-space: 2rem;
+    --horizontal-space: 3rem;
+    --light-color: 140, 134, 249;
+    --body-color:#4BE688;
+    --heading-color:#77cc00;
+    --contrast-color: orange;
+}
+
+body{
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Quicksand', sans-serif;
+    background-color: green;
+    background-image: url(http://www.transparenttextures.com/patterns/45-degree-fabric-light.png);
+    
+}
+
+main {
+    background-color: rgba(var(--light-color), 0.7);
+}
+
+header, nav, nav a {
+    color: var(--light-color);
+    font-size: 24px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1, h2, h3 {
+    line-height: 1.1;
+}
+
+a {
+    color: blue;
+    text-decoration-color: blue;
+}
+
+a:hover {
+    color:var(--body-color);
+}
+
+body#about img {height: 15em;}
+
+p {
+    max-width: 50em;
+}
+
+body {
+    display: grid;
+    grid-template-areas: "head head"
+                         "nav nav"
+                         "main main"
+                         "foot foot";
+    grid-template-rows: auto auto 1fr, auto;
+    grid-template-columns: 1fr 4fr;
+}
+
+@media screen and (min-width: 25em) {
+    body{
+    grid-template-areas: "head head"
+                         "nav main"
+                         "foot foot";
+    grid-template-rows: auto 1fr auto;
+    }
+}
+
+body > * {
+    padding-left: var(--horizontal-space);
+    padding-right: var(--horizontal-space);
+}
+
+body > header {
+    grid-area: head;
+    background-color:forestgreen;
+}
+
+body > nav {
+    grid-area: nav;
+    background-color:lightgreen;
+}
+
+body > nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+body > main {
+    grid-area: main;
+    background-color:darkseagreen;
+}
+
+body > footer {
+    grid-area: foot;
+    background-color:forestgreen;
+}
+
+header, footer {
+    padding-top: var(--vertical-space);
+    padding-bottom: var(--vertical-space);
+}
+
+header h1, footer h1{
+    margin: 0;
+}
+
+body#portfolio ul#portfolioItems {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+body#portfolio ul#portfolioItems li {
+   flex-basis: 48%;
+   padding-right: 2%;
+}
+
+body#portfolio ul#portfolioItems li img {
+    max-width: 100%;
+ }
